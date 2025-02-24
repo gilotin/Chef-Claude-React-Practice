@@ -1,18 +1,21 @@
 {
-  "name": "Scrim-s06iqee",
-  "description": "https://scrimba.com/learn-react-c0e/~02kf",
-  "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "react": "19.0.0-rc-8b08e99e-20240713",
-    "react-dom": "19.0.0-rc-8b08e99e-20240713",
-    "vite": "latest"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "*"
-  }
+    "name": "Scrim-s06iqee",
+    "description": "https://scrimba.com/learn-react-c0e/~02kf",
+    "scripts": {
+        "start": "vite",
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@anthropic-ai/sdk": "0.27.3",
+        "@huggingface/inference": "^2.8.1",
+        "dotenv": "^16.4.7",
+        "react": "19.0.0-rc-8b08e99e-20240713",
+        "react-dom": "19.0.0-rc-8b08e99e-20240713",
+        "vite": "latest"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "*"
+    }
 }
