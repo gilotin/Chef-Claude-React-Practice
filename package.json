@@ -13,6 +13,7 @@
         "dotenv": "^16.4.7",
         "react": "19.0.0-rc-8b08e99e-20240713",
         "react-dom": "19.0.0-rc-8b08e99e-20240713",
+        "react-markdown": "^10.0.0",
         "vite": "latest"
     },
     "devDependencies": {
