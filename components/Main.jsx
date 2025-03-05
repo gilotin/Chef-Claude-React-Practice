@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import ClaudeRecipe from "./ClaudeRecipe";
 import IngredientList from "./IngredientList";
 import { getRecipeFromMistral } from "../ai";
@@ -6,7 +6,15 @@ import { getRecipeFromMistral } from "../ai";
 export default function Main() {
     const [ingredients, setIngredients] = React.useState([]);
     const [error, setError] = React.useState([]);
-    const [recipe, setRecipe] = React.useState(false);
+    const [recipe, setRecipe] = React.useState("");
+
+    const recipeSection = useRef(null);
+
+    useEffect(() => {
+        if (recipe && recipeSection.current !== null) {
+            recipeSection.current.scrollIntoView({ behavior: "smooth" });
+        }
+    }, [recipe]);
 
     const checkIngredients = (array, value) => {
         setError([]);
@@ -48,7 +56,9 @@ export default function Main() {
             {ingredients.length ? null : <h3>Add minimum four ingredients to get a recipe!</h3>}
             <div>{error.length ? <div className="showErr">{error[0]}</div> : null}</div>
 
-            {ingredients.length > 0 && <IngredientList items={ingredients} getRecipe={getRecipe} />}
+            {ingredients.length > 0 && (
+                <IngredientList ref={recipeSection} items={ingredients} getRecipe={getRecipe} />
+            )}
             {recipe ? <ClaudeRecipe recipe={recipe} /> : null}
         </main>
     );
